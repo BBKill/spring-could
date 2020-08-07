@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: service-consul
+  cloud:
+    consul:
+      host: 172.17.59.244
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        # 启用服务发现
+        enabled: true
+        # 启用服务注册
+        register: true
+        # 服务停止时取消注册
+        deregister: true
+        # 表示注册时使用IP而不是hostname
+        prefer-ip-address: true
+#        health-check-path: /health
+server:
+  port: 1010
